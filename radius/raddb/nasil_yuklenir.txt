@@ -1,0 +1,11 @@
+Eğer Docker sıfırlanırsa veya FreeRADIUS ayarları bozulursa, bu klasördeki dosyaları içeri atmak için şu komutları kullanın:
+
+1. REST modülü (API bağlantısı) için:
+docker cp ./freeradius_calisan_ayarlar/rest nac_freeradius:/etc/freeradius/mods-available/rest
+docker exec -it -u root nac_freeradius ln -s /etc/freeradius/mods-available/rest /etc/freeradius/mods-enabled/rest
+
+2. Default sitesi (API'yi tetikleyen kural) için:
+docker cp ./freeradius_calisan_ayarlar/default nac_freeradius:/etc/freeradius/sites-available/default
+
+3. Yeniden başlat:
+docker restart nac_freeradius

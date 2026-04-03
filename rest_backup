@@ -1,0 +1,25 @@
+rest {
+    tls {
+        # check_cert = yes
+    }
+
+    # API'mizin ana adresi (Sadece host ve port kalsın)
+    connect_uri = "http://api:8000"
+
+    # ŞİFRE DOĞRULAMA
+    authenticate {
+        uri = "${..connect_uri}/auth"
+        method = 'post'
+        body = 'json'
+        # Password gönderirken Cleartext-Password veya User-Password kontrolü gerekebilir
+    }
+
+    # ACCOUNTING (PAKETLERİN GİTTİĞİ YER)
+    accounting {
+        uri = "${..connect_uri}/accounting"
+        method = 'post'
+        body = 'json'
+    }
+
+    # Diğer bölümleri de (authorize, post-auth) ${..connect_uri}/endpoint şeklinde bırakabilirsin.
+}
