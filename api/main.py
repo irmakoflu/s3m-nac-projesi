@@ -121,7 +121,6 @@ async def get_active_sessions():
             data = json.loads(session_info)
             data["session_id"] = key.replace("session:", "")
             active_sessions.append(data)
-            
     return active_sessions
 
 
