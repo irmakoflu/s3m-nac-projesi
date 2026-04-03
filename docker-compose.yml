@@ -75,4 +75,5 @@ networks:
 volumes:
   pgdata:
   redisdata:
+  
   freeradius_data:
