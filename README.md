@@ -32,4 +32,4 @@ Bu komutla birlikte:
 ## 🧪 Test Etme
 Sistemin çalıştığını doğrulamak için `radtest` aracını kullanabilirsiniz:
 bash
-docker exec -it nac_freeradius radtest ali_test GizliSifre123 127.0.0.1 0 testing123
+docker exec -it nac_freeradius radtest ali_test GizliSifre123! 127.0.0.1 0 testing123
